@@ -8,6 +8,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
+
 import {RootState} from '../store';
 import {updateQuantity, removeFromCart} from '../store/cartSlice';
 import CartItem from '../components/CartItem';

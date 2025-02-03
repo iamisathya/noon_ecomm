@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, View, Image, Dimensions} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import {useSelector} from 'react-redux';
+
 import {RootState} from '../store';
 import {Banner} from '../types';
 

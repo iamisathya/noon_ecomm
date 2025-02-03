@@ -8,13 +8,14 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
+import {useNavigation} from '@react-navigation/native';
+import {Search} from 'lucide-react-native';
+
 import {AppDispatch, RootState} from '../store';
 import {fetchProductsAsync} from '../store/productsSlice';
 import {fetchBannersAsync} from '../store/bannersSlice';
 import BannerCarousel from '../components/BannerCarousel';
 import ProductCard from '../components/ProductCard';
-import {useNavigation} from '@react-navigation/native';
-// import Icon from '@react-native-vector-icons/ionicons';
 
 const HomeScreen: React.FC = () => {
   const navigation = useNavigation();
@@ -34,7 +35,7 @@ const HomeScreen: React.FC = () => {
         <TouchableOpacity
           onPress={() => navigation.navigate('Search')}
           style={{marginRight: 16}}>
-          {/* <Icon name="search" size={24} color="#000" /> */}
+          <Search size={24} color="#000" />
         </TouchableOpacity>
       ),
     });

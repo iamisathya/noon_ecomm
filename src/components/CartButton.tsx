@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, Text, View} from 'react-native';
-// import Icon from 'react-native-vector-icons/Ionicons';
+import {ShoppingCart} from 'lucide-react-native';
+
 import {useSelector} from 'react-redux';
 import {RootState} from '../store';
 
@@ -14,7 +15,7 @@ const CartButton: React.FC<CartButtonProps> = ({onPress}) => {
 
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
-      {/* <Icon name="cart-outline" size={24} color="#007AFF" /> */}
+      <ShoppingCart size={24} color="#007AFF" />
       {itemCount > 0 && (
         <View style={styles.badge}>
           <Text style={styles.badgeText}>{itemCount}</Text>

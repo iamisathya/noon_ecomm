@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Platform,
 } from 'react-native';
-// import Icon from '@react-native-vector-icons/ionicons';
+import {Search, CircleX} from 'lucide-react-native';
 
 interface SearchBarProps {
   value: string;
@@ -24,7 +24,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   return (
     <View style={styles.container}>
       <View style={styles.searchContainer}>
-        {/* <Icon name="search" size={20} color="#666" style={styles.searchIcon} /> */}
+        <Search size={20} color="#666" style={styles.searchIcon} />
         <TextInput
           style={styles.input}
           value={value}
@@ -35,7 +35,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         />
         {value.length > 0 && (
           <TouchableOpacity onPress={onClear} style={styles.clearButton}>
-            {/* <Icon name="close-circle" size={20} color="#666" /> */}
+            <CircleX size={20} color="#666" />
           </TouchableOpacity>
         )}
       </View>

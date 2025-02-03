@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Image, Text, TouchableOpacity} from 'react-native';
-// import Icon from 'react-native-vector-icons/Ionicons';
+import {Trash, Plus, Minus} from 'lucide-react-native';
 import {CartItem as CartItemType} from '../types';
 
 interface CartItemProps {
@@ -26,21 +26,17 @@ const CartItem: React.FC<CartItemProps> = ({
               onPress={() => onUpdateQuantity(item.quantity - 1)}
               disabled={item.quantity <= 1}
               style={[styles.button, item.quantity <= 1 && styles.disabled]}>
-              {/* <Icon
-                name="remove"
-                size={20}
-                color={item.quantity <= 1 ? '#999' : '#000'}
-              /> */}
+              <Minus size={20} color={item.quantity <= 1 ? '#999' : '#000'} />
             </TouchableOpacity>
             <Text style={styles.quantity}>{item.quantity}</Text>
             <TouchableOpacity
               onPress={() => onUpdateQuantity(item.quantity + 1)}
               style={styles.button}>
-              {/* <Icon name="add" size={20} color="#000" /> */}
+              <Plus size={20} color="#000" />
             </TouchableOpacity>
           </View>
           <TouchableOpacity onPress={onRemove} style={styles.removeButton}>
-            {/* <Icon name="trash-outline" size={20} color="#FF3B30" /> */}
+            <Trash size={20} color="#FF3B30" />
           </TouchableOpacity>
         </View>
       </View>

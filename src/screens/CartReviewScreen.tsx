@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {ScrollView, ActivityIndicator, Alert} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
-import {Camera} from 'lucide-react-native';
+import {IdCard, Camera} from 'lucide-react-native';
 
 import {RootState} from '../store';
 import {clearCart} from '../store/cartSlice';
@@ -61,7 +61,7 @@ const CartReviewScreen: React.FC<CartReviewScreenProps> = ({navigation}) => {
           <S.SectionTitle>Payment Method</S.SectionTitle>
           <S.PaymentCard
             onPress={() => Alert.alert('Change Payment Method', 'Coming soon')}>
-            <Camera name="card-outline" size={24} color="#333" />
+            <IdCard size={24} color="#333" />
             <S.CardInfo>
               <S.CardNumber>
                 •••• •••• •••• {selectedPaymentMethod?.last4}
@@ -70,7 +70,7 @@ const CartReviewScreen: React.FC<CartReviewScreenProps> = ({navigation}) => {
                 Expires {selectedPaymentMethod?.expiryDate}
               </S.CardExpiry>
             </S.CardInfo>
-            <Camera name="chevron-forward" size={24} color="#666" />
+            <Camera size={24} color="#666" />
           </S.PaymentCard>
         </S.Section>
 

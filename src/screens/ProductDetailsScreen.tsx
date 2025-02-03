@@ -9,8 +9,9 @@ import {
   SafeAreaView,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
+import {Minus, Plus} from 'lucide-react-native';
+
 import {addToCart} from '../store/cartSlice';
-// import Icon from 'react-native-vector-icons/Ionicons';
 import CartButton from '../components/CartButton';
 import {Product} from '../types';
 
@@ -79,17 +80,13 @@ const ProductDetailsScreen: React.FC<ProductDetailsScreenProps> = ({
                   quantity <= 1 && styles.disabled,
                 ]}
                 disabled={quantity <= 1}>
-                {/* <Icon
-                  name="remove"
-                  size={24}
-                  color={quantity <= 1 ? '#999' : '#000'}
-                /> */}
+                <Minus size={24} color={quantity <= 1 ? '#999' : '#000'} />
               </TouchableOpacity>
               <Text style={styles.quantityText}>{quantity}</Text>
               <TouchableOpacity
                 onPress={incrementQuantity}
                 style={styles.quantityButton}>
-                {/* <Icon name="add" size={24} color="#000" /> */}
+                <Plus size={24} color="#000" />
               </TouchableOpacity>
             </View>
           </View>
