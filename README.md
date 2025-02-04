@@ -58,40 +58,57 @@ npm run ios
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+# Screens
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+- HomeScreen
+- SearchScreen
+- ProductDetailsScreen
+- CartScreen
+- PaymentScreen
+- OrderConfirmationScreen
 
-## Step 3: Modify your app
+# Store
 
-Now that you have successfully run the app, let's make changes!
+- productsSlice
+- bannersSlice
+- searchSlice
+- cartSlice
+- paymentSlice
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+# Mock API
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+- products
+- banners
+- search
+- cart
+- payment
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+# Libraries
 
-## Congratulations! :tada:
+- react-native-snap-carousel
+- react-redux
+- @reduxjs/toolkit
+- @react-navigation/native
+- @react-navigation/native-stack
+- react-native-safe-area-context
+- react-native-gesture-handler
+- react-native-safe-area-context
 
-You've successfully run and modified your React Native App. :partying_face:
+# Features
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+- Dashboard
+- Search
+- Cart
+- Payment
+- Order Confirmation
+- Product Details
+- Product List
 
 # Troubleshooting
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+- If getting error about style from `react-native-snap-carousel`, try to clean the cache and rebuild the project. apply patch from [here](<[text](https://github.com/meliorence/react-native-snap-carousel/issues/1017)>)
+- clean build cache
 
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+```sh
+npm start -- --reset-cache
+```
