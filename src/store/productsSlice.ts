@@ -44,13 +44,66 @@ const fetchProducts = (): Promise<Product[]> => {
           category: 'electronics',
         },
         {
-          id: '3',
+          id: '5',
           name: 'Mexico Lace-Up Sneakers',
           price: 79.99,
           image:
-            'https://assets.ajio.com/medias/sys_master/root/20230109/5cNi/63bc09d8f997dd708ef49839/-473Wx593H-469434418-oliveoffwhite-MODEL.jpg',
+            'https://assets.ajio.com/medias/sys_master/root/20220714/eGZz/62cf142ef997dd03e2d2ef3f/-473Wx593H-469239806-white-MODEL.jpg',
           tags: ['free delivery'],
           category: 'sports',
+        },
+        {
+          id: '6',
+          name: 'Crocs literide',
+          price: 79.99,
+          image: 'https://m.media-amazon.com/images/I/41IqjDIxXIL._SY695_.jpg',
+          tags: ['free delivery'],
+          category: 'sports',
+        },
+        {
+          id: '7',
+          name: 'Oniksuta tiger',
+          price: 79.99,
+          image:
+            'https://img.tatacliq.com/images/i8/658Wx734H/MP000000013692376_658Wx734H_202207060451223.jpeg',
+          tags: ['free delivery'],
+          category: 'sports',
+        },
+        {
+          id: '8',
+          name: 'Cetaphil Gentle Skin Cleanser',
+          price: 699.99,
+          image:
+            'https://chosenstore.in/cdn/shop/files/CetaphilGentleSkinCleanser_1200x1200.png?v=1710997603',
+          tags: ['new arrival'],
+          category: 'beauty',
+        },
+        {
+          id: '9',
+          name: 'The Ordinary Squalane Cleanser',
+          price: 79.99,
+          image:
+            'https://princesscosmeticsqa.com/cdn/shop/products/the-ordinary-squalane-cleanser-2-size-tha-aordnary-mnthf-alskoalan-hjmyn-540744.png?v=1738160992',
+          tags: ['free delivery'],
+          category: 'beauty',
+        },
+        {
+          id: '10',
+          name: 'CeraVe Moisturizing Cream',
+          price: 79.99,
+          image:
+            'https://www.clinikally.com/cdn/shop/files/CeraVemoisturisingcream50ml.jpg?v=1699622002',
+          tags: ['free delivery'],
+          category: 'beauty',
+        },
+        {
+          id: '11',
+          name: 'The Ordinary Hyaluronic Acid Serum',
+          price: 79.99,
+          image:
+            'https://images-static.nykaa.com/media/catalog/product/6/0/60ee76d769915233490_10.jpg?tr=w-500',
+          tags: ['free delivery'],
+          category: 'beauty',
         },
       ]);
     }, 1000);

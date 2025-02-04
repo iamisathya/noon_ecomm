@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import debounce from 'lodash/debounce';
+import {useNavigation} from '@react-navigation/native';
 
 import {AppDispatch, RootState} from '../store';
 import {
@@ -17,8 +18,10 @@ import {
 } from '../store/searchSlice';
 import SearchBar from '../components/SearchBar';
 import ProductCard from '../components/ProductCard';
+import {Product} from '../types';
 
 const SearchScreen: React.FC = () => {
+  const navigation = useNavigation();
   const dispatch = useDispatch<AppDispatch>();
   const {query, results, loading} = useSelector(
     (state: RootState) => state.search,

@@ -11,7 +11,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 import {Search} from 'lucide-react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {AppStackParamList} from '../navigation/AppNavigator';
+import {AppStackParamList} from '../types';
 
 import {AppDispatch, RootState} from '../store';
 import {fetchProductsAsync} from '../store/productsSlice';
@@ -83,6 +83,7 @@ const HomeScreen: React.FC = () => {
         <>
           {renderProductSection('electronics')}
           {renderProductSection('sports')}
+          {renderProductSection('beauty')}
         </>
       )}
     </ScrollView>
