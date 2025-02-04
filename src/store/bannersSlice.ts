@@ -7,16 +7,30 @@ const fetchBanners = (): Promise<Banner[]> => {
       resolve([
         {
           id: '1',
-          image: 'https://placeholder.com/banner1',
-          title: 'Summer Sale - Up to 50% Off',
+          image:
+            'https://img.freepik.com/premium-vector/2025-new-year-sale-banner_1281977-121.jpg?semt=ais_hybrid',
+          title: 'New year Sale',
         },
         {
           id: '2',
-          image: 'https://placeholder.com/banner2',
-          title: 'New Collection Arrival',
+          image:
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAS6YfxDGTdt3wC15Cjc9VKFPI-CouPAkN8A&s',
+          title: 'Summer Sale - Up to 60% Off',
+        },
+        {
+          id: '3',
+          image:
+            'https://img.freepik.com/premium-vector/free-delivery-banner-with-courier-scooter-delivers-package-free-shipping-order-fast-delivery-badge-advertisement-express-delivery-with-man-scooter-vector-illustration_435184-1202.jpg',
+          title: 'Free delivey on 1000Rs order',
+        },
+        {
+          id: '4',
+          image:
+            'https://img.freepik.com/free-vector/new-arrival-collection-modern-banner-design_1017-36608.jpg',
+          title: 'New arrival',
         },
       ]);
-    }, 800);
+    }, 2000);
   });
 };
 
@@ -42,6 +56,7 @@ const bannersSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchBannersAsync.fulfilled, (state, action) => {
+        console.log('action.payload', action.payload);
         state.loading = false;
         state.items = action.payload;
       })

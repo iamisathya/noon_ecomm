@@ -16,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps & {onPress?: () => void}> = ({
       <Image
         source={{uri: product.image}}
         style={styles.image}
-        resizeMode="cover"
+        resizeMode="contain"
       />
       <View style={styles.details}>
         <Text style={styles.name}>{product.name}</Text>
@@ -44,6 +44,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
+    marginVertical: 6,
+    marginHorizontal: 2,
   },
   image: {
     width: '100%',
@@ -56,11 +58,11 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: '500',
   },
   price: {
     fontSize: 16,
-    fontWeight: '700',
+    fontWeight: '400',
     marginTop: 4,
     color: '#007AFF',
   },

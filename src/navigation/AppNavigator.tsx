@@ -8,6 +8,8 @@ import SearchScreen from '../screens/SearchScreen';
 import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 import CartScreen from '../screens/CartScreen';
 import CartReviewScreen from '../screens/CartReviewScreen';
+import OrderConfirmationScreen from '../screens/OrderConfirmationScreen';
+import {AppRoutes} from './AppRoutes';
 
 // Define types for navigation parameters
 export type AppStackParamList = {
@@ -20,30 +22,31 @@ export type AppStackParamList = {
 
 const Stack = createStackNavigator<AppStackParamList>();
 
+const screenOptions = {
+  headerBackTitleVisible: false,
+  headerStyle: {
+    backgroundColor: '#ffffff',
+  },
+  headerTintColor: '#000000',
+  headerTitleStyle: {
+    fontWeight: '600',
+  },
+};
+
 export const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerBackTitleVisible: false,
-          headerStyle: {
-            backgroundColor: '#ffffff',
-          },
-          headerTintColor: '#000000',
-          headerTitleStyle: {
-            fontWeight: '600',
-          },
-        }}>
-        <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Navigator screenOptions={screenOptions}>
+        <Stack.Screen name={AppRoutes.HOME} component={HomeScreen} />
 
         <Stack.Screen
-          name="Search"
+          name={AppRoutes.SEARCH}
           component={SearchScreen}
           options={{headerShown: false}}
         />
 
         <Stack.Screen
-          name="ProductDetails"
+          name={AppRoutes.PRODUCT_DETAILS}
           component={ProductDetailsScreen}
           options={{
             title: 'Product Details',
@@ -51,7 +54,7 @@ export const AppNavigator = () => {
         />
 
         <Stack.Screen
-          name="Cart"
+          name={AppRoutes.CART}
           component={CartScreen}
           options={{
             title: 'Shopping Cart',
@@ -59,10 +62,17 @@ export const AppNavigator = () => {
         />
 
         <Stack.Screen
-          name="CartReview"
+          name={AppRoutes.CART_REVIEW}
           component={CartReviewScreen}
           options={{
             title: 'Review Order',
+          }}
+        />
+        <Stack.Screen
+          name={AppRoutes.ORDER_CONFIRMATION}
+          component={OrderConfirmationScreen}
+          options={{
+            title: 'Order Confirmation',
           }}
         />
       </Stack.Navigator>

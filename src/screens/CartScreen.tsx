@@ -8,6 +8,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
+import {ShoppingCart} from 'lucide-react-native';
 
 import {RootState} from '../store';
 import {updateQuantity, removeFromCart} from '../store/cartSlice';
@@ -44,7 +45,7 @@ const CartScreen: React.FC<CartScreenProps> = ({navigation}) => {
   if (cartItems.length === 0) {
     return (
       <View style={styles.emptyContainer}>
-        <Icon name="cart-outline" size={64} color="#999" />
+        <ShoppingCart size={64} color="#999" />
         <Text style={styles.emptyText}>Your cart is empty</Text>
         <TouchableOpacity
           style={styles.continueButton}
@@ -120,6 +121,7 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: 'white',
     borderTopWidth: 1,
+    marginHorizontal: 16,
     borderTopColor: '#E0E0E0',
   },
   checkoutButton: {

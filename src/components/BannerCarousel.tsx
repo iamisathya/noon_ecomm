@@ -28,6 +28,7 @@ const BannerCarousel: React.FC = () => {
   return (
     <Carousel
       data={items}
+      containerCustomStyle={styles.carouselContainer}
       renderItem={renderBannerItem}
       sliderWidth={screenWidth}
       itemWidth={screenWidth - 40}
@@ -51,6 +52,9 @@ const styles = StyleSheet.create({
   bannerImage: {
     width: '100%',
     height: '100%',
+  },
+  carouselContainer: {
+    backgroundColor: '#f0f0f0',
   },
 });
 
