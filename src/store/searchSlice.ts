@@ -1,41 +1,17 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import {Product} from '../types';
+import {store} from '.';
 
 // Mock search API call
 const searchProducts = (query: string): Promise<Product[]> => {
   return new Promise(resolve => {
     setTimeout(() => {
-      const mockProducts: Product[] = [
-        {
-          id: '1',
-          name: 'Wireless Earbuds',
-          price: 99.99,
-          image: 'https://placeholder.com/electronics/earbuds',
-          tags: ['free delivery', 'selling fast'],
-          category: 'electronics',
-        },
-        {
-          id: '2',
-          name: 'Smart Watch',
-          price: 199.99,
-          image: 'https://placeholder.com/electronics/watch',
-          tags: ['new arrival'],
-          category: 'electronics',
-        },
-        {
-          id: '3',
-          name: 'Running Shoes',
-          price: 79.99,
-          image: 'https://placeholder.com/sports/shoes',
-          tags: ['free delivery'],
-          category: 'sports',
-        },
-      ];
-
       // Simple search implementation
-      const results = mockProducts.filter(product =>
-        product.name.toLowerCase().includes(query.toLowerCase()),
-      );
+      const results = store
+        .getState()
+        .products.items.filter(product =>
+          product.name.toLowerCase().includes(query.toLowerCase()),
+        );
       resolve(results);
     }, 500);
   });

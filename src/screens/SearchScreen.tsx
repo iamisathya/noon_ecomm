@@ -5,6 +5,7 @@ import {
   FlatList,
   Text,
   ActivityIndicator,
+  SafeAreaView,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import debounce from 'lodash/debounce';
@@ -73,23 +74,29 @@ const SearchScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <SearchBar
-        value={query}
-        onChangeText={handleSearch}
-        onClear={handleClear}
-        autoFocus={true}
-      />
-      {loading ? (
-        <ActivityIndicator style={styles.loader} size="large" color="#007AFF" />
-      ) : (
-        <FlatList
-          data={results}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-          contentContainerStyle={styles.listContainer}
-          ListEmptyComponent={renderEmptyState}
+      <SafeAreaView>
+        <SearchBar
+          value={query}
+          onChangeText={handleSearch}
+          onClear={handleClear}
+          autoFocus={true}
         />
-      )}
+        {loading ? (
+          <ActivityIndicator
+            style={styles.loader}
+            size="large"
+            color="#007AFF"
+          />
+        ) : (
+          <FlatList
+            data={results}
+            renderItem={renderItem}
+            keyExtractor={item => item.id}
+            contentContainerStyle={styles.listContainer}
+            ListEmptyComponent={renderEmptyState}
+          />
+        )}
+      </SafeAreaView>
     </View>
   );
 };
