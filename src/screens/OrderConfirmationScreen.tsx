@@ -3,19 +3,20 @@ import {useNavigation} from '@react-navigation/native';
 import {Check} from 'lucide-react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {AppDispatch, RootState} from '../store';
+import {AppDispatch} from '../store';
 import {resetOrder} from '../store/orderSlice';
 import * as S from '../styled/OrderConfirmation';
-import {OrderConfirmationScreenProps} from '../types';
+import {OrderConfirmationScreenProps, RootState} from '../types';
 
 const OrderConfirmationScreen: React.FC<OrderConfirmationScreenProps> = ({
   route,
 }) => {
   const navigation = useNavigation();
   const dispatch = useDispatch<AppDispatch>();
-  // const orderDetails = useSelector(
-  //   (state: RootState) => state.order.currentOrder,
-  // );
+
+  const orderDetails = useSelector(
+    (state: RootState) => state.order.currentOrder,
+  );
   const orderNumber =
     route?.params?.orderNumber ||
     'ORD-' + Math.random().toString(36).substr(2, 9);
@@ -40,8 +41,9 @@ const OrderConfirmationScreen: React.FC<OrderConfirmationScreenProps> = ({
         <Check color="white" size={50} />
       </S.SuccessCircle>
 
-      {/* <S.MessageText>{orderDetails.length} items</S.MessageText> */}
-      <S.MessageText>Order Confirmed!</S.MessageText>
+      <S.MessageText>
+        Order {orderDetails.status === 'confirmed' ? 'Confirmed!' : 'Failed!'}
+      </S.MessageText>
       <S.SubText>Thank you for your purchase</S.SubText>
 
       <S.OrderNumber>Order #{orderNumber}</S.OrderNumber>

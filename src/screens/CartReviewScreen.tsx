@@ -6,6 +6,7 @@ import {Camera, CreditCard} from 'lucide-react-native';
 import {RootState} from '../store';
 import {clearCart} from '../store/cartSlice';
 import * as S from '../styled/CartReview';
+import {setOrderStatus} from '../store/orderSlice';
 
 interface CartReviewScreenProps {
   navigation: any;
@@ -33,6 +34,7 @@ const CartReviewScreen: React.FC<CartReviewScreenProps> = ({navigation}) => {
     setTimeout(() => {
       setIsProcessing(false);
       dispatch(clearCart());
+      dispatch(setOrderStatus('confirmed'));
       navigation.navigate('OrderConfirmation', {
         orderId: `ORD-${Date.now()}`,
         total,

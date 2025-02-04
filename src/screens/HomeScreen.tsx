@@ -10,15 +10,20 @@ import {
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
 import {Search} from 'lucide-react-native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {AppStackParamList} from '../navigation/AppNavigator';
 
 import {AppDispatch, RootState} from '../store';
 import {fetchProductsAsync} from '../store/productsSlice';
 import {fetchBannersAsync} from '../store/bannersSlice';
 import BannerCarousel from '../components/BannerCarousel';
 import ProductCard from '../components/ProductCard';
+import {AppRoutes} from '../navigation/AppRoutes';
+
+type HomeScreenNavigationProp = NativeStackNavigationProp<AppStackParamList>;
 
 const HomeScreen: React.FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<HomeScreenNavigationProp>();
   const dispatch = useDispatch<AppDispatch>();
   const {items: products, loading: productsLoading} = useSelector(
     (state: RootState) => state.products,
@@ -33,7 +38,7 @@ const HomeScreen: React.FC = () => {
     navigation.setOptions({
       headerRight: () => (
         <TouchableOpacity
-          onPress={() => navigation.navigate('Search')}
+          onPress={() => navigation.navigate(AppRoutes.SEARCH)}
           style={{marginRight: 16}}>
           <Search size={24} color="#000" />
         </TouchableOpacity>
@@ -56,7 +61,9 @@ const HomeScreen: React.FC = () => {
             <ProductCard
               key={product.id}
               product={product}
-              onPress={() => navigation.navigate('ProductDetails', {product})}
+              onPress={() =>
+                navigation.navigate(AppRoutes.PRODUCT_DETAILS, {product})
+              }
             />
           ))}
         </ScrollView>

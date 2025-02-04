@@ -10,15 +10,7 @@ import CartScreen from '../screens/CartScreen';
 import CartReviewScreen from '../screens/CartReviewScreen';
 import OrderConfirmationScreen from '../screens/OrderConfirmationScreen';
 import {AppRoutes} from './AppRoutes';
-
-// Define types for navigation parameters
-export type AppStackParamList = {
-  Home: undefined;
-  Search: undefined;
-  ProductDetails: {productId: string};
-  Cart: undefined;
-  CartReview: undefined;
-};
+import {AppStackParamList} from '../types';
 
 const Stack = createStackNavigator<AppStackParamList>();
 
@@ -29,7 +21,7 @@ const screenOptions = {
   },
   headerTintColor: '#000000',
   headerTitleStyle: {
-    fontWeight: '600',
+    fontWeight: '600' as const,
   },
 };
 

@@ -5,6 +5,7 @@ import bannersReducer from './bannersSlice';
 import searchReducer from './searchSlice';
 import cartReducer from './cartSlice';
 import paymentReducer from './paymentSlice';
+import orderReducer from './orderSlice';
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     search: searchReducer,
     cart: cartReducer,
     payment: paymentReducer,
+    order: orderReducer,
   },
 });
 

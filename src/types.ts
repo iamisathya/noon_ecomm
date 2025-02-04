@@ -24,6 +24,13 @@ export interface RootState {
     loading: boolean;
     error: string | null;
   };
+  order: {
+    currentOrder: {
+      items: OrderItem[];
+      total: number;
+      status: 'pending' | 'confirmed' | 'failed';
+    };
+  };
 }
 
 export interface SearchState {
@@ -79,4 +86,14 @@ export interface OrderItem {
 export type RootStackParamList = {
   // ... other routes
   ProductDetails: {product: Product};
+};
+
+// Define types for navigation parameters
+export type AppStackParamList = {
+  Home: undefined;
+  Search: undefined;
+  ProductDetails: {product: Product};
+  Cart: undefined;
+  CartReview: undefined;
+  OrderConfirmation: {orderNumber?: string};
 };
